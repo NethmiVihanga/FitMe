@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp">
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/bg_circle_primary"
+                android:backgroundTint="@color/primary"
+                android:src="@drawable/ic_back_chevron"
+                app:tint="@color/white"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:text="Add Work"
+                android:textColor="@color/text_header"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_upload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp">
+
+            <LinearLayout
+                android:id="@+id/layout_gallery"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_white_pill"
+                android:backgroundTint="#BFDBFE"
+                android:elevation="0dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginEnd="8dp">
+                <ImageView
+                    android:id="@+id/iv_upload_icon"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@android:drawable/ic_menu_upload"
+                    app:tint="@color/primary" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:text="GALLERY"
+                    android:textColor="@color/primary"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_camera"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_white_pill"
+                android:backgroundTint="#BFDBFE"
+                android:elevation="0dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginStart="8dp">
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@android:drawable/ic_menu_camera"
+                    app:tint="@color/primary" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:text="CAMERA"
+                    android:textColor="@color/primary"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="#8AA8E8"
+            app:cardElevation="0dp"
+            android:layout_marginBottom="24dp">
+            <TextView
+                android:id="@+id/tv_preview_placeholder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="serif"
+                android:text="Selected Work Preview"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+            <ImageView
+                android:id="@+id/iv_preview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:visibility="gone" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:text="Work Title"
+            android:textColor="@color/text_header"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/et_title"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:background="@drawable/bg_input_white"
+            android:hint="Enter Title"
+            android:textColor="@color/text_header"
+            android:textColorHint="#94A3B8"
+            android:paddingHorizontal="20dp"
+            android:textSize="14sp"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:text="Price (Rs.)"
+            android:textColor="@color/text_header"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/et_price"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:background="@drawable/bg_input_white"
+            android:hint="Enter Price"
+            android:textColor="@color/text_header"
+            android:textColorHint="#94A3B8"
+            android:inputType="number"
+            android:paddingHorizontal="20dp"
+            android:textSize="14sp"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:text="Description"
+            android:textColor="@color/text_header"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/et_description"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/bg_input_white"
+            android:fontFamily="serif"
+            android:gravity="top"
+            android:hint="Describe your work..."
+            android:inputType="textMultiLine"
+            android:padding="16dp"
+            android:textColor="@color/text_header"
+            android:textColorHint="#94A3B8"
+            android:textSize="14sp"
+            android:layout_marginBottom="24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:text="Category"
+            android:textColor="@color/text_header"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:layout_marginBottom="32dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView android:id="@+id/tv_type_dresses" android:layout_width="wrap_content" android:layout_height="40dp" android:text="Dresses" android:background="@drawable/bg_white_pill" android:backgroundTint="#BFDBFE" android:gravity="center" android:paddingHorizontal="20dp" android:textSize="12sp" android:textColor="@color/text_header" android:textStyle="bold" android:layout_marginEnd="8dp" />
+                <TextView android:id="@+id/tv_type_formal" android:layout_width="wrap_content" android:layout_height="40dp" android:text="Formal" android:background="@drawable/bg_white_pill" android:backgroundTint="#BFDBFE" android:gravity="center" android:paddingHorizontal="20dp" android:textSize="12sp" android:textColor="@color/text_header" android:textStyle="bold" android:layout_marginEnd="8dp" />
+                <TextView android:id="@+id/tv_type_traditional" android:layout_width="wrap_content" android:layout_height="40dp" android:text="Traditional" android:background="@drawable/bg_white_pill" android:backgroundTint="#BFDBFE" android:gravity="center" android:paddingHorizontal="20dp" android:textSize="12sp" android:textColor="@color/text_header" android:textStyle="bold" android:layout_marginEnd="8dp" />
+                <TextView android:id="@+id/tv_type_bridal" android:layout_width="wrap_content" android:layout_height="40dp" android:text="Bridal" android:background="@drawable/bg_white_pill" android:backgroundTint="#BFDBFE" android:gravity="center" android:paddingHorizontal="20dp" android:textSize="12sp" android:textColor="@color/text_header" android:textStyle="bold" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_add_portfolio"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:background="@drawable/bg_white_pill"
+            android:backgroundTint="@color/primary"
+            android:fontFamily="serif"
+            android:text="+ Add to portfolio"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:elevation="4dp"
+            android:layout_marginBottom="32dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:text="Your Portfolio"
+            android:textColor="@color/text_header"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_portfolio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginBottom="40dp" />
+
+    </LinearLayout>
+</ScrollView>

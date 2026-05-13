@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Header -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="24dp">
+                
+                <ImageButton
+                    android:id="@+id/btn_back"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/bg_circle_primary"
+                    android:backgroundTint="@color/primary"
+                    android:src="@drawable/ic_back_chevron"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Upload Design"
+                    android:textColor="@color/text_header"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <!-- Design Selection Area -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24dp"
+                android:gravity="center">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/layout_upload_image"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="24dp"
+                    app:cardBackgroundColor="#BFDBFE"
+                    app:cardElevation="0dp"
+                    android:layout_marginEnd="10dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <ImageView
+                            android:id="@+id/iv_upload_icon"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:src="@android:drawable/ic_menu_upload"
+                            app:tint="@color/primary"
+                            android:background="@drawable/bg_circle_primary"
+                            android:backgroundTint="@color/white"
+                            android:padding="12dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="UPLOAD IMAGE"
+                            android:textColor="@color/text_header"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="8dp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/layout_take_photo"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="24dp"
+                    app:cardBackgroundColor="#BFDBFE"
+                    app:cardElevation="0dp"
+                    android:layout_marginStart="10dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <ImageView
+                            android:id="@+id/iv_camera_icon"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@android:drawable/ic_menu_camera"
+                            app:tint="@color/primary"
+                            android:background="@drawable/bg_circle_primary"
+                            android:backgroundTint="@color/white"
+                            android:padding="8dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TAKE A PHOTO"
+                            android:textColor="@color/text_header"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="12dp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- Design Preview Area -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                app:cardCornerRadius="50dp"
+                app:cardBackgroundColor="#8AA8E8"
+                app:cardElevation="0dp"
+                app:strokeColor="#3B82F6"
+                app:strokeWidth="5dp"
+                android:layout_marginBottom="24dp">
+                
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    
+                    <ImageView
+                        android:id="@+id/iv_design_preview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tv_preview_placeholder"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="Your design preview will appear here"
+                        android:textColor="@color/text_header"
+                        android:textSize="14sp"
+                        android:alpha="0.4"
+                        android:fontFamily="serif" />
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Design Description"
+                android:textColor="@color/text_header"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Design Description Box -->
+            <EditText
+                android:id="@+id/et_description"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@drawable/bg_white_pill"
+                android:backgroundTint="#8AA8E8"
+                android:gravity="center"
+                android:hint="DESCRIBE YOUR DESIGN IN DETAIL..."
+                android:inputType="textMultiLine"
+                android:padding="16dp"
+                android:textColor="@color/text_header"
+                android:textColorHint="#BFDBFE"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fabric Type"
+                android:textColor="@color/text_header"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Fabric Type Grid - 2 columns -->
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chip_group_fabric"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:singleSelection="true"
+                app:selectionRequired="true"
+                android:layout_marginBottom="24dp"
+                app:chipSpacingHorizontal="8dp"
+                app:chipSpacingVertical="8dp">
+
+                <!-- Row 1 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_cotton"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="44dp"
+                        android:layout_marginEnd="6dp"
+                        android:text="Cotton"
+                        android:textAlignment="center"
+                        app:chipBackgroundColor="@color/chip_background_selector"
+                        android:textColor="@color/chip_text_selector" />
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_silk"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="6dp"
+                        android:text="Silk"
+                        android:textAlignment="center"
+                        app:chipBackgroundColor="@color/chip_background_selector"
+                        android:textColor="@color/chip_text_selector" />
+                </LinearLayout>
+
+                <!-- Row 2 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_denim"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="44dp"
+                        android:layout_marginEnd="6dp"
+                        android:text="Denim"
+                        android:textAlignment="center"
+                        app:chipBackgroundColor="@color/chip_background_selector"
+                        android:textColor="@color/chip_text_selector" />
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_linen"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="6dp"
+                        android:text="Linen"
+                        android:textAlignment="center"
+                        app:chipBackgroundColor="@color/chip_background_selector"
+                        android:textColor="@color/chip_text_selector" />
+                </LinearLayout>
+
+                <!-- Row 3 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_wool"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="44dp"
+                        android:layout_marginEnd="6dp"
+                        android:text="Wool"
+                        android:textAlignment="center"
+                        app:chipBackgroundColor="@color/chip_background_selector"
+                        android:textColor="@color/chip_text_selector" />
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_satin"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="6dp"
+                        android:text="Satin"
+                        android:textAlignment="center"
+                        app:chipBackgroundColor="@color/chip_background_selector"
+                        android:textColor="@color/chip_text_selector" />
+                </LinearLayout>
+            </com.google.android.material.chip.ChipGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Size"
+                android:textColor="@color/text_header"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Size Grid - 2 columns -->
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chip_group_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:singleSelection="true"
+                app:selectionRequired="true"
+                android:layout_marginBottom="32dp"
+                app:chipSpacingHorizontal="8dp"
+                app:chipSpacingVertical="8dp">
+
+                <!-- Row 1 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_size_s"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="44dp"
+                        android:layout_marginEnd="6dp"
+                        android:text="S"
+                        android:textAlignment="center"
+                        app:chipBackgroundColor="@color/chip_background_selector"
+                        android:textColor="@color/chip_text_selector" />
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_size_m"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="6dp"
+                        android:text="M"
+                        android:textAlignment="center"
+                        app:chipBackgroundColor="@color/chip_background_selector"
+                        android:textColor="@color/chip_text_selector" />
+                </LinearLayout>
+
+                <!-- Row 2 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_size_l"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="44dp"
+                        android:layout_marginEnd="6dp"
+                        android:text="L"
+                        android:textAlignment="center"
+                        app:chipBackgroundColor="@color/chip_background_selector"
+                        android:textColor="@color/chip_text_selector" />
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_size_xl"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="6dp"
+                        android:text="XL"
+                        android:textAlignment="center"
+                        app:chipBackgroundColor="@color/chip_background_selector"
+                        android:textColor="@color/chip_text_selector" />
+                </LinearLayout>
+
+                <!-- Row 3 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_size_xxl"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="44dp"
+                        android:layout_marginEnd="6dp"
+                        android:text="XXL"
+                        android:textAlignment="center"
+                        app:chipBackgroundColor="@color/chip_background_selector"
+                        android:textColor="@color/chip_text_selector" />
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_size_xxxl"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="6dp"
+                        android:text="XXXL"
+                        android:textAlignment="center"
+                        app:chipBackgroundColor="@color/chip_background_selector"
+                        android:textColor="@color/chip_text_selector" />
+                </LinearLayout>
+            </com.google.android.material.chip.ChipGroup>
+
+            <!-- Budget and Quantity -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+                
+                <EditText
+                    android:id="@+id/et_budget_min"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_white_pill"
+                    android:backgroundTint="#8AA8E8"
+                    android:hint="Rs. ... to Rs. ..."
+                    android:textColorHint="#BFDBFE"
+                    android:textColor="@color/text_header"
+                    android:gravity="center"
+                    android:textSize="13sp"
+                    android:inputType="text"
+                    android:layout_marginEnd="8dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_white_pill"
+                    android:backgroundTint="#8AA8E8"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginStart="8dp">
+                    <ImageButton
+                        android:id="@+id/btn_minus"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/bg_circle_primary"
+                        android:backgroundTint="@color/white"
+                        android:src="@drawable/ic_minus"
+                        app:tint="@color/primary" />
+                    <TextView
+                        android:id="@+id/tv_amount"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:text="1"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="16sp" />
+                    <ImageButton
+                        android:id="@+id/btn_plus"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/bg_circle_primary"
+                        android:backgroundTint="@color/white"
+                        android:src="@drawable/ic_plus"
+                        app:tint="@color/primary" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Expected Delivery Date"
+                android:textColor="@color/text_header"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <LinearLayout
+                android:id="@+id/btn_pick_date"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/bg_white_pill"
+                android:backgroundTint="#8AA8E8"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp"
+                android:layout_marginBottom="32dp">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@android:drawable/ic_menu_today"
+                    app:tint="@color/white" />
+                <TextView
+                    android:id="@+id/tv_delivery_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Select expected delivery date"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:gravity="start"
+                    android:layout_marginStart="16dp" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_submit"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_white_pill"
+                android:backgroundTint="@color/primary"
+                android:text="Submit Order"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:layout_marginBottom="40dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

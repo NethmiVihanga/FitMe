@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "302525754659",
+    "project_id": "fitme-eb485",
+    "storage_bucket": "fitme-eb485.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:302525754659:android:b9a348b3a4b879d70b7096",
+        "android_client_info": {
+          "package_name": "com.fitme.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "302525754659-c249o903egrbltmcm2tg04j48kub06ne.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fitme.app",
+            "certificate_hash": "6316fecc3e29a944075787e270db0707b5d4ea11"
+          }
+        },
+        {
+          "client_id": "302525754659-n44nej24idascuv7hdarmpango45arga.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBb_Irm4OwOF4Yx_Om-EOGwMY0aIIpabJQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "302525754659-n44nej24idascuv7hdarmpango45arga.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

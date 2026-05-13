@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="36dp"
+    android:layout_height="36dp">
+
+    <!-- Pin circle -->
+    <TextView
+        android:id="@+id/tv_pin_label"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_gravity="top|center_horizontal"
+        android:background="@drawable/bg_circle_primary"
+        android:backgroundTint="@color/primary"
+        android:gravity="center"
+        android:text="1"
+        android:textColor="@color/white"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        android:elevation="8dp" />
+
+    <!-- Pin tail pointing down -->
+    <View
+        android:layout_width="3dp"
+        android:layout_height="10dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:background="@color/primary" />
+</FrameLayout>

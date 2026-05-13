@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/bg_circle_primary"
+            android:backgroundTint="@color/primary"
+            android:src="@drawable/ic_back_chevron"
+            app:tint="@color/white"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:text="Edit Profile"
+            android:textColor="@color/text_header"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="12dp">
+
+            <!-- Profile Image Selection -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginBottom="32dp">
+                <FrameLayout
+                    android:layout_width="120dp"
+                    android:layout_height="120dp">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_profile_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@android:drawable/ic_menu_myplaces"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="@color/primary" />
+                    <ImageButton
+                        android:id="@+id/btn_pick_image"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="bottom|end"
+                        android:background="@drawable/bg_circle_primary"
+                        android:backgroundTint="@color/primary"
+                        android:src="@android:drawable/ic_menu_camera"
+                        app:tint="@color/white"
+                        android:padding="6dp" />
+                </FrameLayout>
+                <TextView
+                    android:id="@+id/btn_remove_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Remove Image"
+                    android:textColor="#EF4444"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Full Name"
+                android:textColor="@color/text_header"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:fontFamily="serif"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:background="@drawable/bg_input_white"
+                android:hint="Your Name"
+                android:paddingHorizontal="16dp"
+                android:layout_marginBottom="20dp"
+                android:textSize="14sp"
+                android:textColor="@color/text_header"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone Number"
+                android:textColor="@color/text_header"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:fontFamily="serif"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/et_phone"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:background="@drawable/bg_input_white"
+                android:hint="Phone"
+                android:paddingHorizontal="16dp"
+                android:layout_marginBottom="20dp"
+                android:textSize="14sp"
+                android:textColor="@color/text_header"
+                android:maxLength="10"
+                android:inputType="phone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Location"
+                android:textColor="@color/text_header"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:fontFamily="serif"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/et_location"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:background="@drawable/bg_input_white"
+                android:hint="City, Country"
+                android:paddingHorizontal="16dp"
+                android:layout_marginBottom="24dp"
+                android:textSize="14sp"
+                android:textColor="@color/text_header"
+                android:inputType="textPostalAddress" />
+
+            <!-- Seamstress Specific Fields -->
+            <LinearLayout
+                android:id="@+id/layout_seamstress_fields"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="About / Bio"
+                    android:textColor="@color/text_header"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:fontFamily="serif"
+                    android:layout_marginBottom="8dp" />
+
+                <EditText
+                    android:id="@+id/et_bio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="120dp"
+                    android:background="@drawable/bg_input_white"
+                    android:hint="Tell customers about your skills..."
+                    android:padding="16dp"
+                    android:gravity="top"
+                    android:layout_marginBottom="20dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_header"
+                    android:inputType="textMultiLine" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Specialties (comma separated)"
+                    android:textColor="@color/text_header"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:fontFamily="serif"
+                    android:layout_marginBottom="8dp" />
+
+                <EditText
+                    android:id="@+id/et_specialties"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:background="@drawable/bg_input_white"
+                    android:hint="e.g. Cotton, Silk, Bridal"
+                    android:paddingHorizontal="16dp"
+                    android:layout_marginBottom="24dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_header"
+                    android:inputType="text" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_save"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:background="@drawable/bg_white_pill"
+                android:backgroundTint="@color/primary"
+                android:text="Save Changes"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:elevation="4dp"
+                android:layout_marginBottom="40dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

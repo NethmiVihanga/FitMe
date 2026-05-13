@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_circle_primary"
+            android:backgroundTint="#3B82F6"
+            android:src="@drawable/ic_back_chevron"
+            android:tint="@color/white"
+            android:layout_marginTop="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:text="Create Account"
+                android:textColor="@color/text_header"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:text="Join FitMe Today"
+                android:textColor="@color/text_header"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="40dp"
+            app:cardBackgroundColor="#8AA8E8"
+            android:alpha="0.8"
+            app:cardElevation="0dp"
+            android:layout_marginBottom="32dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <EditText
+                    android:id="@+id/et_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_input_white"
+                    android:fontFamily="serif"
+                    android:hint="Full Name"
+                    android:inputType="textPersonName"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textColorHint="#94A3B8"
+                    android:textSize="13sp"
+                    android:layout_marginBottom="16dp" />
+
+                <EditText
+                    android:id="@+id/et_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_input_white"
+                    android:fontFamily="serif"
+                    android:hint="Email Address"
+                    android:inputType="textEmailAddress"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textColorHint="#94A3B8"
+                    android:textSize="13sp"
+                    android:layout_marginBottom="16dp" />
+
+                <EditText
+                    android:id="@+id/et_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_input_white"
+                    android:fontFamily="serif"
+                    android:hint="Phone Number"
+                    android:inputType="phone"
+                    android:maxLength="10"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textColorHint="#94A3B8"
+                    android:textSize="13sp"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Password Field -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_input_white"
+                    android:layout_marginBottom="8dp">
+                    <EditText
+                        android:id="@+id/et_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:fontFamily="serif"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:gravity="center"
+                        android:paddingEnd="48dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="#94A3B8"
+                        android:textSize="13sp" />
+                    <ImageButton
+                        android:id="@+id/btn_toggle_password"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:background="@null"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_eye_open"
+                        android:tint="#94A3B8"
+                        android:contentDescription="Toggle password visibility" />
+                </RelativeLayout>
+
+
+
+                <!-- Confirm Password Field -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_input_white"
+                    android:layout_marginBottom="16dp">
+                    <EditText
+                        android:id="@+id/et_confirm_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:fontFamily="serif"
+                        android:hint="Confirm Password"
+                        android:inputType="textPassword"
+                        android:gravity="center"
+                        android:paddingEnd="48dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="#94A3B8"
+                        android:textSize="13sp" />
+                    <ImageButton
+                        android:id="@+id/btn_toggle_confirm_password"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:background="@null"
+                        android:padding="10dp"
+                        android:src="@android:drawable/ic_menu_view"
+                        android:tint="#94A3B8"
+                        android:contentDescription="Toggle confirm password visibility" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#EF4444"
+                    android:textSize="11sp"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_register"
+            android:layout_width="120dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_white_pill"
+            android:fontFamily="serif"
+            android:text="Register"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Divider -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp">
+            <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" android:background="#FFFFFF" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" or continue with "
+                android:textColor="#FFFFFF"
+                android:textSize="11sp" />
+            <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" android:background="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- Google Login Button -->
+        <LinearLayout
+            android:id="@+id/btn_google"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_input_white"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginBottom="32dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_google"
+                android:layout_marginEnd="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:text="Continue with Google"
+                android:textColor="@color/text_medium"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

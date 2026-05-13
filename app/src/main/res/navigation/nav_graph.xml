@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <!-- Auth Flow -->
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.fitme.app.ui.auth.SplashFragment"
+        android:label="Splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splash_to_login"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_splash_to_customer_home"
+            app:destination="@id/customerHomeFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splash_to_seamstress_home"
+            app:destination="@id/seamstressHomeFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.fitme.app.ui.auth.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_to_role"
+            app:destination="@id/roleSelectionFragment" />
+        <action
+            android:id="@+id/action_login_to_forgot"
+            app:destination="@id/forgotPasswordFragment" />
+        <action
+            android:id="@+id/action_login_to_customer_home"
+            app:destination="@id/customerHomeFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_login_to_seamstress_home"
+            app:destination="@id/seamstressHomeFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/roleSelectionFragment"
+        android:name="com.fitme.app.ui.auth.RoleSelectionFragment"
+        android:label="Role"
+        tools:layout="@layout/fragment_role_selection">
+        <action
+            android:id="@+id/action_role_to_register"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_role_to_customer_home"
+            app:destination="@id/customerHomeFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_role_to_seamstress_home"
+            app:destination="@id/seamstressHomeFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.fitme.app.ui.auth.RegisterFragment"
+        android:label="Register"
+        tools:layout="@layout/fragment_register">
+        <argument
+            android:name="role"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_register_to_role"
+            app:destination="@id/roleSelectionFragment" />
+        <action
+            android:id="@+id/action_register_to_customer_home"
+            app:destination="@id/customerHomeFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_register_to_seamstress_home"
+            app:destination="@id/seamstressHomeFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.fitme.app.ui.auth.ForgotPasswordFragment"
+        android:label="ForgotPassword"
+        tools:layout="@layout/fragment_forgot_password">
+    </fragment>
+
+    <!-- Customer Flow -->
+    <fragment
+        android:id="@+id/customerHomeFragment"
+        android:name="com.fitme.app.ui.customer.CustomerHomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_customer_home">
+        <action
+            android:id="@+id/action_home_to_upload"
+            app:destination="@id/uploadDesignFragment" />
+        <action
+            android:id="@+id/action_home_to_browse"
+            app:destination="@id/browseTailorsFragment" />
+        <action
+            android:id="@+id/action_home_to_orders"
+            app:destination="@id/myOrdersFragment" />
+        <action
+            android:id="@+id/action_home_to_profile"
+            app:destination="@id/customerProfileFragment" />
+        <action
+            android:id="@+id/action_home_to_chat"
+            app:destination="@id/chatFragment" />
+        <action
+            android:id="@+id/action_home_to_tailor_profile"
+            app:destination="@id/tailorProfileFragment" />
+        <action
+            android:id="@+id/action_home_to_tracking"
+            app:destination="@id/orderTrackingFragment" />
+        <action
+            android:id="@+id/action_home_to_upgrade"
+            app:destination="@id/upgradeDetailsFragment" />
+        <action
+            android:id="@+id/action_home_to_3d_viewer"
+            app:destination="@id/threeDViewerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/uploadDesignFragment"
+        android:name="com.fitme.app.ui.customer.UploadDesignFragment"
+        android:label="Upload"
+        tools:layout="@layout/fragment_upload_design">
+        <action
+            android:id="@+id/action_upload_to_payment"
+            app:destination="@id/paymentFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/upgradeDetailsFragment"
+        android:name="com.fitme.app.ui.customer.UpgradeDetailsFragment"
+        android:label="UpgradeDetails"
+        tools:layout="@layout/fragment_upgrade_details">
+        <action
+            android:id="@+id/action_upgrade_to_payment"
+            app:destination="@id/proPaymentFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/proPaymentFragment"
+        android:name="com.fitme.app.ui.customer.ProPaymentFragment"
+        android:label="ProPayment"
+        tools:layout="@layout/fragment_pro_payment">
+        <action
+            android:id="@+id/action_payment_to_3d_viewer"
+            app:destination="@id/threeDViewerFragment"
+            app:popUpTo="@id/customerHomeFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/threeDViewerFragment"
+        android:name="com.fitme.app.ui.customer.ThreeDViewerFragment"
+        android:label="ThreeDViewer"
+        tools:layout="@layout/fragment_3d_viewer">
+        <argument
+            android:name="clearSession"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/annotationsViewerFragment"
+        android:name="com.fitme.app.ui.seamstress.AnnotationsViewerFragment"
+        android:label="AnnotationsViewer"
+        tools:layout="@layout/fragment_annotations_viewer">
+        <argument
+            android:name="customerId"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="orderId"
+            app:argType="string"
+            android:defaultValue="" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.fitme.app.ui.customer.PaymentFragment"
+        android:label="Payment"
+        tools:layout="@layout/fragment_payment">
+        <argument
+            android:name="orderId"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="budgetMin"
+            app:argType="float"
+            android:defaultValue="0" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/browseTailorsFragment"
+        android:name="com.fitme.app.ui.customer.BrowseTailorsFragment"
+        android:label="Browse"
+        tools:layout="@layout/fragment_browse_tailors">
+        <action
+            android:id="@+id/action_browse_to_profile"
+            app:destination="@id/tailorProfileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/tailorProfileFragment"
+        android:name="com.fitme.app.ui.customer.TailorProfileFragment"
+        android:label="TailorProfile"
+        tools:layout="@layout/fragment_tailor_profile">
+        <argument
+            android:name="tailorId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_profile_to_upload"
+            app:destination="@id/uploadDesignFragment" />
+        <action
+            android:id="@+id/action_tailor_profile_to_chat"
+            app:destination="@id/chatFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/myOrdersFragment"
+        android:name="com.fitme.app.ui.customer.MyOrdersFragment"
+        android:label="MyOrders"
+        tools:layout="@layout/fragment_my_orders">
+        <action
+            android:id="@+id/action_orders_to_tracking"
+            app:destination="@id/orderTrackingFragment" />
+        <action
+            android:id="@+id/action_orders_to_payment"
+            app:destination="@id/paymentFragment" />
+        <action
+            android:id="@+id/action_orders_to_chat"
+            app:destination="@id/chatFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/orderTrackingFragment"
+        android:name="com.fitme.app.ui.customer.OrderTrackingFragment"
+        android:label="OrderTracking"
+        tools:layout="@layout/fragment_order_tracking">
+        <argument
+            android:name="orderId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_tracking_to_chat"
+            app:destination="@id/chatFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/customerProfileFragment"
+        android:name="com.fitme.app.ui.customer.CustomerProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_customer_profile">
+        <action
+            android:id="@+id/action_profile_to_login"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/customerHomeFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_profile_to_edit"
+            app:destination="@id/editProfileFragment" />
+        <action
+            android:id="@+id/action_profile_to_account_settings"
+            app:destination="@id/accountSettingsFragment" />
+        <action
+            android:id="@+id/action_profile_to_change_password"
+            app:destination="@id/changePasswordFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.fitme.app.ui.customer.ChatFragment"
+        android:label="Chat"
+        tools:layout="@layout/fragment_chat">
+        <argument
+            android:name="tailorId"
+            app:argType="string"
+            android:defaultValue="" />
+    </fragment>
+
+    <!-- Seamstress Flow -->
+    <fragment
+        android:id="@+id/seamstressHomeFragment"
+        android:name="com.fitme.app.ui.seamstress.SeamstressHomeFragment"
+        android:label="SeamstressHome"
+        tools:layout="@layout/fragment_seamstress_home">
+        <action
+            android:id="@+id/action_seamstress_home_to_manage"
+            app:destination="@id/manageOrdersFragment" />
+        <action
+            android:id="@+id/action_seamstress_home_to_earnings"
+            app:destination="@id/earningsFragment" />
+        <action
+            android:id="@+id/action_seamstress_home_to_add_work"
+            app:destination="@id/addWorkFragment" />
+        <action
+            android:id="@+id/action_seamstress_home_to_profile"
+            app:destination="@id/seamstressProfileFragment" />
+        <action
+            android:id="@+id/action_seamstress_home_to_ai_assistant"
+            app:destination="@id/aiAssistantFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/manageOrdersFragment"
+        android:name="com.fitme.app.ui.seamstress.ManageOrdersFragment"
+        android:label="ManageOrders"
+        tools:layout="@layout/fragment_manage_orders">
+        <action
+            android:id="@+id/action_manage_orders_to_chat"
+            app:destination="@id/chatFragment" />
+        <action
+            android:id="@+id/action_manage_orders_to_annotations"
+            app:destination="@id/annotationsViewerFragment" />
+        <argument
+            android:name="initialTab"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addWorkFragment"
+        android:name="com.fitme.app.ui.seamstress.AddWorkFragment"
+        android:label="AddWork"
+        tools:layout="@layout/fragment_add_work" />
+
+    <fragment
+        android:id="@+id/earningsFragment"
+        android:name="com.fitme.app.ui.seamstress.EarningsFragment"
+        android:label="Earnings"
+        tools:layout="@layout/fragment_earnings">
+        <action
+            android:id="@+id/action_earnings_to_withdrawal"
+            app:destination="@id/withdrawalFragment" />
+        <action
+            android:id="@+id/action_earnings_to_update_payment"
+            app:destination="@id/updatePaymentFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/withdrawalFragment"
+        android:name="com.fitme.app.ui.seamstress.WithdrawalFragment"
+        android:label="Withdrawal"
+        tools:layout="@layout/fragment_withdrawal" />
+
+    <fragment
+        android:id="@+id/updatePaymentFragment"
+        android:name="com.fitme.app.ui.seamstress.UpdatePaymentFragment"
+        android:label="UpdatePayment"
+        tools:layout="@layout/fragment_update_payment" />
+
+    <fragment
+        android:id="@+id/seamstressProfileFragment"
+        android:name="com.fitme.app.ui.seamstress.SeamstressProfileFragment"
+        android:label="SeamstressProfile"
+        tools:layout="@layout/fragment_customer_profile">
+        <action
+            android:id="@+id/action_seamstress_profile_to_login"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/seamstressHomeFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_seamstress_profile_to_edit"
+            app:destination="@id/editProfileFragment" />
+        <action
+            android:id="@+id/action_seamstress_profile_to_account_settings"
+            app:destination="@id/accountSettingsFragment" />
+        <action
+            android:id="@+id/action_seamstress_profile_to_change_password"
+            app:destination="@id/changePasswordFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.fitme.app.ui.profile.EditProfileFragment"
+        android:label="Edit Profile"
+        tools:layout="@layout/fragment_edit_profile" />
+
+    <fragment
+        android:id="@+id/accountSettingsFragment"
+        android:name="com.fitme.app.ui.profile.AccountSettingsFragment"
+        android:label="Account Settings"
+        tools:layout="@layout/fragment_account_settings" />
+
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.fitme.app.ui.profile.ChangePasswordFragment"
+        android:label="Change Password"
+        tools:layout="@layout/fragment_change_password" />
+
+    <fragment
+        android:id="@+id/aiAssistantFragment"
+        android:name="com.fitme.app.ui.seamstress.AiAssistantFragment"
+        android:label="AI Assistant"
+        tools:layout="@layout/fragment_ai_assistant" />
+
+</navigation>
